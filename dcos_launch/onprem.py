@@ -147,7 +147,7 @@ class OnpremLauncher(dcos_launch.util.AbstractLauncher):
         desc = copy.copy(self.config)
         desc.update(extra_info)
         # blackout unwanted fields
-        del desc['template_body']
+        desc.pop('template_body', None)
         desc.pop('template_parameters', None)
         return desc
 
